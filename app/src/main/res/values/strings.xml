@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Cadastro de Livro</string>
+    <string name="hint_nome">Título...</string>
+    <string name="hint_descricao">Descrição...</string>
+    <string name="salvar">Salvar</string>
+    <string name="titleConser">Conservação</string>
+    <string-array name="Conservacao">
+        <item>Conservação</item>
+        <item>Ótimo</item>
+        <item>Bom</item>
+        <item>Regular</item>
+        <item>Ruim</item>
+        <item>Péssimo</item>
+    </string-array>
+    <string-array name="Editora">
+        <item>Editora</item>
+        <item>Item2</item>
+        <item>Item3</item>
+        <item>Item4</item>
+        <item>Item5</item>
+    </string-array>
+</resources>
