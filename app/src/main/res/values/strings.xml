@@ -3,7 +3,7 @@
     <string name="hint_nome">Título...</string>
     <string name="hint_descricao">Descrição...</string>
     <string name="salvar">Salvar</string>
-    <string name="volume">10</string>
+    <string name="volume">0</string>
     <string name="volumeText">Volume</string>
     <string name="titleConser">Conservação</string>
     <string-array name="Conservacao">
