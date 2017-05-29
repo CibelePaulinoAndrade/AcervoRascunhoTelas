@@ -5,6 +5,11 @@
     <string name="salvar">Salvar</string>
     <string name="volume">0</string>
     <string name="volumeText">Volume</string>
+    <string name="hint_editora">Editora</string>
+    <string name="hint_ano">Ano</string>
+    <string name="hint_autor">Autor</string>
+    <string name="hint_pg">Páginas</string>
+    <string name="hint_edicao">Edição</string>
     <string name="titleConser">Conservação</string>
     <string-array name="Conservacao">
         <item>Conservação</item>
@@ -14,11 +19,5 @@
         <item>Ruim</item>
         <item>Péssimo</item>
     </string-array>
-    <string-array name="Editora">
-        <item>Editora</item>
-        <item>Item2</item>
-        <item>Item3</item>
-        <item>Item4</item>
-        <item>Item5</item>
-    </string-array>
+
 </resources>

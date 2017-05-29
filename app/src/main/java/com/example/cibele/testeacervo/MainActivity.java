@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -17,11 +16,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button camera;                       //Botão - Camera
     Spinner spin;                        //Conservação
-    Spinner spin2;                       //Editora
     ArrayAdapter adp;                    //Array - Conservação
-    ArrayAdapter adp2;                   //Array - Editora
     ImageView imagemLivro;               //Imagem do livro
     TextView volume;                     //Volume
 
@@ -29,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Imagem
         imagemLivro = (ImageView)findViewById(R.id.imgLivro);
 
@@ -42,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
         spin = (Spinner)findViewById(R.id.spnConservacao);
         adp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(adp);
-
-        //Spinner Editora
-        adp2 =  ArrayAdapter.createFromResource(this, R.array.Editora, R.layout.spinner_cadastro2);
-        spin2 = (Spinner)findViewById(R.id.spnEditora);
-        adp2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin2.setAdapter(adp2);
 
         //Volume - Texto
         volume = (TextView)findViewById(R.id.textoMeio);
@@ -81,22 +72,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-    //Guardar os dados de titulo e descrição do livro
-    //Chamado quando pressiona o botão "Salvar"
-    public void registrarLivro(View v){
-        EditText tituloET = (EditText) findViewById(R.id.txtTitulo);
-        EditText descricaoET = (EditText) findViewById(R.id.txtDescricao);
-        String titulo = tituloET.getText().toString();
-        String descricao = descricaoET.getText().toString();
-    }
     //Aumenta o valor do Volume
     //Chamado quando pressiona o botão "Seta Superior"
     public void aumentaValor(View v){
         int x;
         x = Integer.valueOf(volume.getText().toString());
-        Log.d("teste", "aumentaValor: "+x);
         int soma = x+1;
-        Log.d("teste2", "aumentaValor: "+soma);
         volume.setText(String.valueOf(soma));
 
     }
@@ -105,14 +86,44 @@ public class MainActivity extends AppCompatActivity {
     public void diminuiValor(View v){
         int y;
         y = Integer.valueOf(volume.getText().toString());
-        Log.d("teste3", "aumentaValor: "+y);
         int diminui = y-1;
-        Log.d("teste4", "aumentaValor: "+diminui);
         if(diminui>=1){
             volume.setText(String.valueOf(diminui));
         }
         else{
             volume.setText("0");
         }
+    }
+    //Guardar os dados de titulo, autor, ano, edição, páginas, conservação, editora e descrição do livro
+    //Chamado quando pressiona o botão "Salvar"
+    public void registrarLivro(View v){
+        EditText tituloET = (EditText) findViewById(R.id.txtTitulo);
+        EditText descricaoET = (EditText) findViewById(R.id.txtDescricao);
+        EditText editoraET = (EditText) findViewById(R.id.txtEditora);
+        EditText autorET = (EditText) findViewById(R.id.txtAutor);
+        EditText anoET = (EditText) findViewById(R.id.txtAno);
+        EditText edicaoET = (EditText) findViewById(R.id.txtEdicao);
+        EditText paginaET = (EditText) findViewById(R.id.txtPag);
+        TextView conservacaoET = (TextView)spin.getSelectedView();
+
+        String titulo = tituloET.getText().toString();
+        String descricao = descricaoET.getText().toString();
+        String editora = editoraET.getText().toString();
+        String volume = this.volume.getText().toString();
+        String autor = autorET.getText().toString();
+        String ano = anoET.getText().toString();
+        String edicao = edicaoET.getText().toString();
+        String pagina = paginaET.getText().toString();
+        String conservacao = conservacaoET.getText().toString();
+
+        Log.d("titulo", "Titulo: "+titulo);
+        Log.d("autor", "Autor: "+autor);
+        Log.d("ano", "Ano: "+ano);
+        Log.d("edicao", "Edição: "+edicao);
+        Log.d("pagina", "Página: "+pagina);
+        Log.d("descricao", "Descrição: "+descricao);
+        Log.d("editora", "Editora: "+editora);
+        Log.d("volume", "Volume: "+volume);
+        Log.d("conservacao", "Conservação: "+conservacao);
     }
 }
