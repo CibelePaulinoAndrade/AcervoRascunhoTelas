@@ -7,4 +7,5 @@ Android Studio
 ## Tipo de Desenvolvimento:
 Android Nativo
 
-Link do App Completo: https://github.com/EliasPaulinoAndrade/AcervoDeLivros
+## Repositório Completo
+https://github.com/EliasPaulinoAndrade/AcervoDeLivros
